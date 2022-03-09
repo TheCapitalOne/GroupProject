@@ -1,11 +1,10 @@
-/* List formatting */
-article
+/* Section formatting */
+section
 {
     text-align: center;
-    border: 1px solid black;
     margin: 5px 5px 5px 5px;
 }
-
+/* General Formatting*/
 body
 {
     background-color: rgb(206, 182, 77);
@@ -21,17 +20,43 @@ header
     border: 1px solid black; 
     margin: 5px 5px 5px 5px;       
     padding: 2px 2px 2px 2px;
+    font-family: cursive;
+    color: red;
 }
 
-
+/*nav bar formatting*/
 nav
 {
-    grid-area: sidebar;
+    grid-area: nav;
     border: 1px solid black; 
-    margin: 5px 5px 5px 5px;       
-    padding: 2px 2px 2px 2px;
+    margin: 5px 5px 5px 5px;     
 }
-
+/*Link list formatting to make it horizontal*/
+ul.link-menu
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e05937;
+    
+}
+li.link-item
+{
+    float: left;
+}
+li.link-item a 
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+li.link-item a:hover 
+{
+    background-color: #d30f0f;
+}
 main
 {
     grid-area: content;
@@ -49,74 +74,151 @@ footer
     border: 1px solid black; 
     margin: 5px 5px 5px 5px;       
     padding: 2px 2px 2px 2px;
+    font-family: cursive;
+    color: red;
 }
 
 .page-container
 {
     display: grid;
-    grid-template-columns: 1fr 8fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-          "header    header"
-          "sidebar   content"
-          "footer    footer";
+        "nav       nav"
+        "header    header"
+        "content   content"
+        "footer    footer";
 }
-/* Column formatting*/
-.row
-{
-    display: flex;
-}
-.column
-{
-    flex: 50%;
-}
-/*Formatting for uneven columns*/
-.column-left
-{
-    float: left;
-}
-.left, .right 
-{
-    width: 25%;
-}
-.middle {
-    width: 50%;
-}
+
+
 /* Home page formatting*/
-.home-header
+.hour-container
 {
-    font-family: 'Courier New', Courier, monospace;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "header    header"
+        "content   content"
+        "footer    footer"
+}
+/* hour list background format */
+.hour-list
+{
+    border-radius: 100px;
+    background-color: white;
+    background-position: center;
+    
+}
+/* hour list format*/
+.hours
+{
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+}
+/* format for the title of the hours */
+.hour-title
+{
+    font-style: italic;
+    color: #d30f0f;
+}
+/* image format on home page */
+.diner-image
+{
     text-align: center;
 }
-.home-article 
-{
-    background-color: rgb(200, 110, 100);
-}
-.home
-{
-    font-family: 'Times New Roman', Times, serif;
-}
-/*About page formatting*/
 
+/*About page formatting*/
+.about-main
+{
+    background-color: white;
+    font-size: 25px;
+    text-align: center;
+}
 
 /*Contact page formatting*/
-
-
-/*Map page formatting*/
-
+.c-main
+{
+    background-color: white;
+    font-size: large;
+    text-align: center;
+}
 
 /*Menu page formatting*/
-.menu-header
+
+
+/*menu grid formatting*/
+.menu-title
 {
     font-family: cursive;
     color: red;
+    font-size: 45px;
+    grid-area: title;
 }
-.menu-page-item
+/*Format subtitle if needed*/
+.menu-subtitle
 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 35px;
+    font-size: 25px;
+    grid-area: subtitle;
 }
-.menu-article
+/*Formats image*/
+.menu-image
 {
+    grid-area: image;
+    text-align: left;
+    border-top: 1px solid black;
+
+
+}
+/*Formats Description*/
+.menu-description
+{
+    grid-area: description;
+    text-align: center;
+    border-top: 1px solid black;
+
+}
+/*Formats Price*/
+.menu-price
+{
+    grid-area: price;
+    text-align: right;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+
+
+}
+/*Grid within a grid was used to make menu look uniform and easy to read*/
+.menu-container
+{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+        "title  title   title"
+        "subtitle subtitle subtitle"
+        "image  description  price";
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px
+}
+/*This was the only way I thought of getting a bottom border
+without creating overlapping borders*/
+.menu-container-end
+{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+        "title  title   title"
+        "subtitle subtitle subtitle"
+        "image  description  price";
+    border-bottom: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px
+    
+}
+/*menu table formatting*/
+.menu-table
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
